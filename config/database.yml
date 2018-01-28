@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: 123456
+  host: localhost
+
+development:
+  <<: *default
+  database: rails_wd_development
+
+test:
+  <<: *default
+  database: rails_wd_test
+
+production:
+  <<: *default
+  database: rails_wd_production
+  username: rails_wd
+  password: <%= ENV['APET_DATABASE_PASSWORD'] %>

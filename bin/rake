@@ -1,0 +1,4 @@
+#!/home/lht/.rvm/rubies/ruby-2.4.0/bin/ruby
+require_relative '../config/boot'
+require 'rake'
+Rake.application.run
